@@ -57,7 +57,7 @@ class RadioTest {
     }
 
     @Test
-    ///возможность выставить номер радиостанции через прямое ее указание не входящее в диапозон радиостанций от 0 до 9
+    ///возможность выставить номер радиостанции через прямое ее указание за пределами диапазона радиостанций от 0 до 9
     public void shouldSetTheRadioStationOutOfRange() {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(11);
@@ -77,7 +77,7 @@ class RadioTest {
     }
 
     @Test
-    /// увелечение громкости в пределах от 0 до 10
+    /// увелечение громкости в пределах от 0 до 100
     public void shouldVolumeUp() {
         Radio radio = new Radio();
         radio.setCurrentVolume(3);
@@ -88,12 +88,12 @@ class RadioTest {
     }
 
     @Test
-    /// увелечение громкости за пределами лимита громкости 10
+    /// увелечение громкости за пределами лимита громкости 100
     public void shouldVolumeUpMoreThanTheLimit() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(11);
+        radio.setCurrentVolume(101);
         radio.volumeUp();
-        int expected = 10;
+        int expected = 100;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
@@ -110,12 +110,12 @@ class RadioTest {
     }
 
     @Test
-    /// уменьшение громкости в пределах от 0 до 10
+    /// уменьшение громкости в пределах от 0 до 100
     public void shouldVolumeDown() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(4);
+        radio.setCurrentVolume(25);
         radio.volumeDown();
-        int expected = 3;
+        int expected = 24;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
