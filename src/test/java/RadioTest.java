@@ -75,6 +75,13 @@ class RadioTest {
         int actual = radio.getCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
+    @Test
+    public void shouldSetTheRadioStation() {
+        int expected = 8;
+        Radio radio = new Radio(8);
+        int actual = radio.getStationAmount();
+        Assertions.assertEquals(expected, actual);
+    }
 
     @Test
     /// увелечение громкости в пределах от 0 до 100
