@@ -67,7 +67,7 @@ class RadioTest {
     }
 
     @Test
-    ///возможность выставить номер радиостанции через прямое ее указание не входящее в диапозон радиостанций от 0 до 9
+    ///возможность выставить номер радиостанции через прямое ее указание перед пределами диапозона радиостанций от 0 до 9
     public void shouldSetTheRadioStationOutOfRange1() {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(-1);
