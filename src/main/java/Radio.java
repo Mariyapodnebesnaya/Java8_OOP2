@@ -1,8 +1,11 @@
-public class Radio {
-    private int currentRadioStation;
-    private int currentVolume;
-    private final int stationAmount;
+import lombok.*;
 
+
+public class Radio {
+
+    private @Getter  int currentRadioStation;
+    private @Getter  int currentVolume;
+    private @Getter @Setter int stationAmount;
 
     public Radio() {
         stationAmount = 10;
@@ -10,18 +13,6 @@ public class Radio {
 
     public Radio(int stationAmount) {
         this.stationAmount = stationAmount;
-    }
-
-    public int getCurrentRadioStation() {
-        return currentRadioStation;
-    }
-
-    public int getStationAmount() {
-        return stationAmount;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
     }
 
     public void setCurrentRadioStation(int currentRadioStation) {
